@@ -2,10 +2,36 @@
 <html>
 <head>
         <meta charset="utf-8">
-        <title>Welocome!</title>
+        <title>欢迎！</title>
     </head>
     <body>
-        <h1>请输入编号来查找文件</h1>
-        <p>页面维护中，暂不可查找</p>
-        <button>立即查找</button>
+        <h1>请输入关键字来查找文件</h1>
+        <dir id="1">
+        <input type="text" name="input1" value="1" class="main">
+		</dir>
+        <button type="button" onclick="myFunction()" id="but">点击查找</button>
     </body>
+<script>
+	var num = 0;
+    function myFunction()
+	{
+		num = num + 1;
+		var d = document.getElementById('1'); 
+		var but = document.getElementById('but');
+		var a = document.getElementsByClassName("main")[0].value;
+		//aleart(name);
+		if (a == "评选文案")
+		{
+			
+			d.insertAdjacentHTML('beforeend', '<br>');
+			d.insertAdjacentHTML('beforeend', '<p>第'+num+'次输出：</p>');
+			d.insertAdjacentHTML('beforeend', '<a href="https://gliuhe.github.io/Activities/WenAn.html">点击进入</a>');
+			but.disabled==false;
+		}
+        else
+		{
+			d.insertAdjacentHTML('beforeend', '<p>第'+num+'次输出：</p>');
+			d.insertAdjacentHTML('beforeend', '<p>无效的关键字</p>');
+		}
+	}
+</script>
