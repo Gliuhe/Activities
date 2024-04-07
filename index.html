@@ -2,19 +2,19 @@
 <html>
 <head>
         <meta charset="utf-8">
-        <title>欢迎！</title>
+        <title>活动信息查询</title>
     </head>
     <body>
-        <h1>请输入关键字来查找文件</h1>
+        <h1 style="text-align: center;">请输入关键字来查找文件</h1>
         <dir id="1">
 	<p>输入（示例：AP5）：</p>
         <input type="text" name="input1" class="main">
 		</dir>
-        <button type="button" onclick="myFunction()" id="but">点击查找</button>
+        <button type="button" onclick="Find()" id="but">点击查找</button>
     </body>
 <script>
 	var num = 0;
-    function myFunction()
+    function Find()
 	{
 		num = num + 1;
 		var d = document.getElementById('1'); 
@@ -65,7 +65,17 @@
 			d.insertAdjacentHTML('beforeend', '<p>第'+num+'次输出：</p>');
 			d.insertAdjacentHTML('beforeend', '<a href="https://gliuhe.github.io/Activities/AP-6.jpg">点击进入</a>');
 		}
-        	else
+		else if (a == "")
+		{
+			d.insertAdjacentHTML('beforeend', '<p>第'+num+'次输出：</p>');
+			d.insertAdjacentHTML('beforeend', '<p>错误！内容为空！</p>');
+		}
+		else if (a == "Video2404")
+		{
+			d.insertAdjacentHTML('beforeend', '<p>第'+num+'次输出</p>')
+			d.insertAdjacentHTML('beforeend', '<a href="https://gliuhe.github.io/Video2404">点击进入</a>');
+		}
+        else
 		{
 			d.insertAdjacentHTML('beforeend', '<p>第'+num+'次输出：</p>');
 			d.insertAdjacentHTML('beforeend', '<p>无效的关键字</p>');
