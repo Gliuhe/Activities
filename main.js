@@ -14,6 +14,7 @@ function Find()
 		d.insertAdjacentHTML('beforeend', '<a href="https://gliuhe.github.io/Activities/WenAn.html" style="color: green;">点击进入</a>');
 		d.insertAdjacentHTML('beforeend', '<br><a href="https://gliuhe.github.io/Activities/word-ico.png" font-size: 12px;" download:"/《春游照片评比》文案.docx">');
 		d.insertAdjacentHTML('beforeend', '<img border="0" src="/word-ico.png" alt="gliuhe.github.io">');
+		d.insertAdjacentHTML('beforeend', '</a>');
 				     
 		but.disabled==false;
 	}
