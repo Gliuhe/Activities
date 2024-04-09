@@ -12,9 +12,7 @@ function Find()
 		d.insertAdjacentHTML('beforeend', '<br>');
 		d.insertAdjacentHTML('beforeend', '<p>第'+num+'次输出：</p>');
 		d.insertAdjacentHTML('beforeend', '<a href="https://gliuhe.github.io/Activities/WenAn.html" style="color: green;">点击进入</a>');
-		d.insertAdjacentHTML('beforeend', '<br><a href="https://gliuhe.github.io/Activities/word-ico.png" font-size: 12px;" download:"/《春游照片评比》文案.docx">');
-		d.insertAdjacentHTML('beforeend', '<img border="0" src="/word-ico.png" alt="gliuhe.github.io">');
-		d.insertAdjacentHTML('beforeend', '</a>');
+		d.insertAdjacentHTML('beforeend', '<br><a href="https://gliuhe.github.io/Activities/word-ico.png" font-size: 12px;" download:"/《春游照片评比》文案.docx"><img border="0" src="/word-ico.png" alt="gliuhe.github.io"></a>');
 				     
 		but.disabled==false;
 	}
