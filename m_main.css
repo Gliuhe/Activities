@@ -11,15 +11,7 @@ body {
   padding:30px 0px 10px 0px;
 }
 #i18o4{
-  height:161px;
-  en:1;
-}
-#it3tf{
-  width:212.4px;
-  en:1;
-}
-#iye5i{
-  width:300.2px;
+  height:156px;
   en:1;
 }
 *{
@@ -262,6 +254,7 @@ body{
     padding:10px;
     text-align:center;
     opacity:0.5;
+    font-size:12px;
   }
   .c6255{
     margin:0px 3px 0px 0px;
