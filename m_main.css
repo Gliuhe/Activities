@@ -190,7 +190,7 @@ body{
 .main{
   margin:-17px 0px 0px 234px;
   padding:0px 768px 0px 5px;
-  text-align:center;
+  text-align:left;
   border:1px solid #03a865;
   color:#000000;
   height:30px;
@@ -213,6 +213,10 @@ body{
 .c9887{
   text-align:center;
   opacity:0.5;
+}
+.c23250{
+  text-align:left;
+  padding:0px 0px 0px 81px;
 }
 @media (max-width: 992px){
   .main{
@@ -260,7 +264,8 @@ body{
   }
   .c23250{
     color:black;
-    margin:0px 0px 0px 18px;
-    vertical-align:middle;
+    width:186px;
+    height:193px;
+    margin:0px 0px 0px -55px;
   }
 }
