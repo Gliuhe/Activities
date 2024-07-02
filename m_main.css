@@ -14,6 +14,10 @@ body {
   height:161px;
   en:1;
 }
+#it3tf{
+  width:212.4px;
+  en:1;
+}
 #iye5i{
   width:300.2px;
   en:1;
@@ -211,6 +215,24 @@ body{
   font-size:21px;
   overflow:auto;
 }
+@media (max-width: 992px){
+  .main{
+    margin:0px 0px 0px 0px;
+    padding:0px 356px 0px 5px;
+    text-align:left;
+    font-size:22px;
+    color:#0c0b0b;
+    font-family:Arial, Helvetica, 黑体;
+  }
+  .c9887{
+    text-align:center;
+    opacity:0.5;
+  }
+  .c5725{
+    margin:0px -47px 0px 8px;
+    text-align:center;
+  }
+}
 @media (max-width: 768px){
   .htmlpage-cell{
     width:100%;
@@ -223,9 +245,10 @@ body{
     padding:0px -38px 0px 0px;
   }
   .main{
-    margin:0px -3px 0px 0px;
-    padding:8px 20px 0px 5px;
+    margin:0px 0px 0px 0px;
+    padding:8px 0px 0px 5px;
     text-align:left;
+    height:27px;
   }
   .c5657{
     padding:15px 9px 0px 0px;
