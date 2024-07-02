@@ -1,4 +1,4 @@
-var num = 0;
+var num = 0; 
 function Find()
 {
 	num = num + 1;
