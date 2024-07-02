@@ -7,10 +7,10 @@
   <script>
     const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
      
-    if (!isMobile) {
-      window.location.replace("https://gliuhe.github.io/Activities/find.html");
-    } else {
+    if (isMobile) {
       window.location.replace("https://gliuhe.github.io/Activities/m_index.html");
+    } else {
+      window.location.replace("https://gliuhe.github.io/Activities/find.html");
     }
 </script>
 </html>
