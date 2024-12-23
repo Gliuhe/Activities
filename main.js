@@ -30,11 +30,11 @@ function Find()
 		d.insertAdjacentHTML('beforeend', '<br>');
 		d.insertAdjacentHTML('beforeend', '<p>第'+num+'次输出：</p>');
 		d.insertAdjacentHTML('beforeend', '<p style="color:red">Error: 你小子，谁让你乱查的？我让你搜文综！（嘘🤫，其实只有你和代码知道这件事）</p>');
-	}else if (a == "没角色" || a== "星琪儿")
+	}else if (a == "没角色" || a== "星琪儿" || a=="我喜欢你" || a=="I like you forever"||a=="我爱你"||a=="对不起"||a=="1"||a=="姚子熙"||a=="杨婉婷")
 	{
 		d.insertAdjacentHTML('beforeend', '<br>');
 		d.insertAdjacentHTML('beforeend', '<p>第'+num+'次输出：</p>');
-		d.insertAdjacentHTML('beforeend', '<h3 style="color:red">Error：你小子，谁让你乱查的？我让你搜文综！（嘘🤫，其实只有你和代码知道这件事）</h3>');
+		d.insertAdjacentHTML('beforeend', '<h4 style="color:red">Error：你小子，谁让你乱查的？我让你搜文综！（嘘🤫，其实只有你和代码知道这件事）</h4>');
 	}
 	else if (a == "AP2")
 	{
