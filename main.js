@@ -25,6 +25,12 @@ function Find()
 		d.insertAdjacentHTML('beforeend', '<p>第'+num+'次输出：</p>');
 		d.insertAdjacentHTML('beforeend', '<a href="https://gliuhe.github.io/Tuesday" style="color: green;">点击进入（特殊文件查询）</a>');
 	}
+	else if (a == "谢谢你" || a== "谢谢")
+	{
+		d.insertAdjacentHTML('beforeend', '<br>');
+		d.insertAdjacentHTML('beforeend', '<p>第'+num+'次输出：</p>');
+		d.insertAdjacentHTML('beforeend', '<h4 style="color: yellow">嘻嘻，不用谢^ω^（嘘🤫，其实只有你和代码知道这件事）');
+	}
 	else if (a == "Liuhe" || a== "鹨鹖")
 	{
 		d.insertAdjacentHTML('beforeend', '<br>');
