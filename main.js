@@ -19,6 +19,23 @@ function Find()
 		d.insertAdjacentHTML('beforeend', '<p>第'+num+'次输出：</p>');
 		d.insertAdjacentHTML('beforeend', '<a href="https://gliuhe.github.io/Activities/AP-1.jpg" style="color: green;">点击进入（旅游征文图片1）</a>');
 	}
+	else if (a == "星期二" || a== "Tuesday")
+	{
+		d.insertAdjacentHTML('beforeend', '<br>');
+		d.insertAdjacentHTML('beforeend', '<p>第'+num+'次输出：</p>');
+		d.insertAdjacentHTML('beforeend', '<a href="https://gliuhe.github.io/Tuesday" style="color: green;">点击进入（特殊文件查询）</a>');
+	}
+	else if (a == "Liuhe" || a== "鹨鹖")
+	{
+		d.insertAdjacentHTML('beforeend', '<br>');
+		d.insertAdjacentHTML('beforeend', '<p>第'+num+'次输出：</p>');
+		d.insertAdjacentHTML('beforeend', '<p style="color:red">Error: 你小子，谁让你乱查的？我让你搜文综！（嘘🤫，其实只有你和代码知道这件事）</p>');
+	}else if (a == "没角色" || a== "星琪儿")
+	{
+		d.insertAdjacentHTML('beforeend', '<br>');
+		d.insertAdjacentHTML('beforeend', '<p>第'+num+'次输出：</p>');
+		d.insertAdjacentHTML('beforeend', '<h3 style="color:red">Error：你小子，谁让你乱查的？我让你搜文综！（嘘🤫，其实只有你和代码知道这件事）</h3>');
+	}
 	else if (a == "AP2")
 	{
 		d.insertAdjacentHTML('beforeend', '<br>');
