@@ -31,7 +31,7 @@ function Find()
 		d.insertAdjacentHTML('beforeend', '<p>第'+num+'次输出：</p>');
 		d.insertAdjacentHTML('beforeend', '<a href="https://gliuhe.github.io/Tuesday" style="color: green;">那就来这里看看吧（特殊文件查询），有任何问题欢迎联系我</a>');
 	}
-	else if (a == "星期二" || a== "Tuesday")
+	else if (a == "我喜欢你" || a== "I like you forever")
 	{
 		d.insertAdjacentHTML('beforeend', '<br>');
 		d.insertAdjacentHTML('beforeend', '<p>第'+num+'次输出：</p>');
