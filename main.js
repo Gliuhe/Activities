@@ -29,30 +29,30 @@ function Find()
 	{
 		d.insertAdjacentHTML('beforeend', '<br>');
 		d.insertAdjacentHTML('beforeend', '<p>第'+num+'次输出：</p>');
-		d.insertAdjacentHTML('beforeend', '<a href="https://gliuhe.github.io/Tuesday" style="color: green;">那就来这里看看吧（特殊文件查询），有任何问题欢迎联系我</a>');
+		d.insertAdjacentHTML('beforeend', '<a href="https://gliuhe.github.io/Tuesday/fs.html" style="color: green;">？这速在</a>');
 	}
 	else if (a == "我喜欢你" || a== "I like you forever")
 	{
 		d.insertAdjacentHTML('beforeend', '<br>');
 		d.insertAdjacentHTML('beforeend', '<p>第'+num+'次输出：</p>');
-		d.insertAdjacentHTML('beforeend', '<p>该关键词涉及敏感信息，无法检索，建议与我在社交软件联系以稳定心态。</p>');
+		d.insertAdjacentHTML('beforeend', '<p>Are you kidding me??你和搜索框有什么感情吗</p>');
 	}
 	else if (a == "谢谢你" || a== "谢谢")
 	{
 		d.insertAdjacentHTML('beforeend', '<br>');
 		d.insertAdjacentHTML('beforeend', '<p>第'+num+'次输出：</p>');
-		d.insertAdjacentHTML('beforeend', '<h4 style="color: yellow">不用谢^ω^（嘘🤫，其实只有你和代码知道这件事）');
+		d.insertAdjacentHTML('beforeend', '<h4 style="color: yellow">嘻嘻（#^.^#）');
 	}
 	else if (a == "Liuhe" || a== "鹨鹖")
 	{
 		d.insertAdjacentHTML('beforeend', '<br>');
 		d.insertAdjacentHTML('beforeend', '<p>第'+num+'次输出：</p>');
-		d.insertAdjacentHTML('beforeend', '<p style="color:red">Error: 你觉得我有那么好调查吗？怎么可能就这么容易找到（嘘🤫，其实只有你和代码知道这件事）</p>');
+		d.insertAdjacentHTML('beforeend', '<p style="color:red">你觉得我有那么好调查吗？怎么可能就这么容易找到</p>);
 	}else if (a == "没角色" || a== "星琪儿" ||a=="对不起"||a=="1"||a=="姚子熙"||a=="杨婉婷")
 	{
 		d.insertAdjacentHTML('beforeend', '<br>');
 		d.insertAdjacentHTML('beforeend', '<p>第'+num+'次输出：</p>');
-		d.insertAdjacentHTML('beforeend', '<h4 style="color:red">Error：哥们 谁让你乱查的？我让你搜文综（嘘🤫，其实只有你和代码知道这件事）</h4>');
+		d.insertAdjacentHTML('beforeend', '<h4 style="color:red">乱查啥呢。。</h4>');
 	}
 	else if (a == "AP2")
 	{
