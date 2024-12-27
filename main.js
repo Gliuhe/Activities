@@ -43,12 +43,13 @@ function Find()
 		d.insertAdjacentHTML('beforeend', '<p>第'+num+'次输出：</p>');
 		d.insertAdjacentHTML('beforeend', '<h4 style="color: yellow">嘻嘻（#^.^#）');
 	}
-	else if (a == "Liuhe" || a== "鹨鹖")
+	else if (a == "Liuhe" || a== "鹨鹖"||a=="姚子熙"||a=="LiuH")
 	{
 		d.insertAdjacentHTML('beforeend', '<br>');
 		d.insertAdjacentHTML('beforeend', '<p>第'+num+'次输出：</p>');
-		d.insertAdjacentHTML('beforeend', '<p style="color:red">你觉得我有那么好调查吗？怎么可能就这么容易找到</p>');
-	}else if (a == "没角色" || a== "星琪儿" ||a=="对不起"||a=="1"||a=="姚子熙"||a=="杨婉婷")
+		d.insertAdjacentHTML('beforeend', '<p style="color:red">？搜我干啥</p>');
+	}
+	else if (a == "没角色" || a== "星琪儿" ||a=="对不起"||a=="1"||a=="杨婉婷")
 	{
 		d.insertAdjacentHTML('beforeend', '<br>');
 		d.insertAdjacentHTML('beforeend', '<p>第'+num+'次输出：</p>');
@@ -98,7 +99,7 @@ function Find()
 	{
 		d.insertAdjacentHTML('beforeend', '<br>');
 		d.insertAdjacentHTML('beforeend', '<p>第'+num+'次输出：</p>');
-		d.insertAdjacentHTML('beforeend', '<a href="https://gliuhe.github.io/Activities/help.html" style="color: green;">点击进入(文综资料)</a>');
+		d.insertAdjacentHTML('beforeend', '<a href="https://gliuhe.github.io/Activities/help.html" style="color: green;">Click to get files.</a>');
 	}
 	else
 	{
