@@ -29,31 +29,31 @@ function Find()
 	{
 		d.insertAdjacentHTML('beforeend', '<br>');
 		d.insertAdjacentHTML('beforeend', '<p>第'+num+'次输出：</p>');
-		d.insertAdjacentHTML('beforeend', '<a href="https://gliuhe.github.io/Tuesday/fs.html" style="color: green;">？这速在</a>');
+		d.insertAdjacentHTML('beforeend', '<a href="https://gliuhe.github.io/Tuesday/fs.html" style="color: green;">:P</a>');
 	}
 	else if (a == "我喜欢你" || a== "I like you forever")
 	{
 		d.insertAdjacentHTML('beforeend', '<br>');
 		d.insertAdjacentHTML('beforeend', '<p>第'+num+'次输出：</p>');
-		d.insertAdjacentHTML('beforeend', '<p>Are you kidding me??你和搜索框有什么感情吗</p>');
+		d.insertAdjacentHTML('beforeend', '<p>System Error, Please try again</p>');
 	}
 	else if (a == "谢谢你" || a== "谢谢")
 	{
 		d.insertAdjacentHTML('beforeend', '<br>');
 		d.insertAdjacentHTML('beforeend', '<p>第'+num+'次输出：</p>');
-		d.insertAdjacentHTML('beforeend', '<h4 style="color: yellow">嘻嘻（#^.^#）');
+		d.insertAdjacentHTML('beforeend', '<h4 style="color: yellow">谢谢的英文是：Thanks / Thank you');
 	}
 	else if (a == "Liuhe" || a== "鹨鹖"||a=="姚子熙"||a=="LiuH")
 	{
 		d.insertAdjacentHTML('beforeend', '<br>');
 		d.insertAdjacentHTML('beforeend', '<p>第'+num+'次输出：</p>');
-		d.insertAdjacentHTML('beforeend', '<p style="color:red">？搜我干啥</p>');
+		d.insertAdjacentHTML('beforeend', '<p style="color:red">你无需了解你自己</p>');
 	}
 	else if (a == "没角色" || a== "星琪儿" ||a=="对不起"||a=="1"||a=="杨婉婷")
 	{
 		d.insertAdjacentHTML('beforeend', '<br>');
 		d.insertAdjacentHTML('beforeend', '<p>第'+num+'次输出：</p>');
-		d.insertAdjacentHTML('beforeend', '<h4 style="color:red">乱查啥呢。。</h4>');
+		d.insertAdjacentHTML('beforeend', '<h4 style="color:red">Error: 未检索到内容。</h4>');
 	}
 	else if (a == "AP2")
 	{
@@ -99,11 +99,11 @@ function Find()
 	{
 		d.insertAdjacentHTML('beforeend', '<br>');
 		d.insertAdjacentHTML('beforeend', '<p>第'+num+'次输出：</p>');
-		d.insertAdjacentHTML('beforeend', '<a href="https://gliuhe.github.io/Activities/help.html" style="color: green;">Click to get files.</a>');
+		d.insertAdjacentHTML('beforeend', '<a href="https://gliuhe.github.io/Activities/help.html" style="color: green;">文件（页面）...</a>');
 	}
 	else
 	{
 		d.insertAdjacentHTML('beforeend', '<p>第'+num+'次输出：</p>');
-		d.insertAdjacentHTML('beforeend', '<p style="color: red;">无效的关键字</p>');
+		d.insertAdjacentHTML('beforeend', '<p style="color: red;">Error：未检索到内容（需完全匹配）</p>');
 	}
 }
