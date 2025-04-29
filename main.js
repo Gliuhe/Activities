@@ -35,7 +35,7 @@ function Find()
 	{
 		d.insertAdjacentHTML('beforeend', '<br>');
 		d.insertAdjacentHTML('beforeend', '<p>第'+num+'次输出：</p>');
-		d.insertAdjacentHTML('beforeend', '<p>System Error, Please try again</p>');
+		d.insertAdjacentHTML('beforeend', '<p>检索失败【【【【【【】】】】】】】】】】【【【【【【【</p>');
 	}
 	else if (a == "谢谢你" || a== "谢谢")
 	{
@@ -47,7 +47,7 @@ function Find()
 	{
 		d.insertAdjacentHTML('beforeend', '<br>');
 		d.insertAdjacentHTML('beforeend', '<p>第'+num+'次输出：</p>');
-		d.insertAdjacentHTML('beforeend', '<p style="color:red">你无需了解你自己</p>');
+		d.insertAdjacentHTML('beforeend', '<p style="color:red">？？</p>');
 	}
 	else if (a == "没角色" || a== "星琪儿" ||a=="对不起"||a=="1"||a=="杨婉婷")
 	{
@@ -88,22 +88,22 @@ function Find()
 	else if (a == "")
 	{
 		d.insertAdjacentHTML('beforeend', '<p>第'+num+'次输出：</p>');
-		d.insertAdjacentHTML('beforeend', '<p style="color: red;">错误！内容为空！</p>');
+		d.insertAdjacentHTML('beforeend', '<p style="color: red;">请输入搜索内容！</p>');
 	}
 	else if (a == "Video2404")
 	{
 		d.insertAdjacentHTML('beforeend', '<p>第'+num+'次输出</p>')
-		d.insertAdjacentHTML('beforeend', '<a href="https://gliuhe.github.io/Video2404" style="color: green;">点击进入（朗诵视频）</a>');
+		d.insertAdjacentHTML('beforeend', '<a href="https://gliuhe.github.io/Video2404" style="color: green;">点击进入（202404Video）</a>');
 	}
 	else if (a == "文综")
 	{
 		d.insertAdjacentHTML('beforeend', '<br>');
 		d.insertAdjacentHTML('beforeend', '<p>第'+num+'次输出：</p>');
-		d.insertAdjacentHTML('beforeend', '<a href="https://gliuhe.github.io/Activities/help.html" style="color: green;">文件（页面）...</a>');
+		d.insertAdjacentHTML('beforeend', '<a href="https://gliuhe.github.io/Activities/help.html" style="color: green;">点击跳转</a>');
 	}
 	else
 	{
 		d.insertAdjacentHTML('beforeend', '<p>第'+num+'次输出：</p>');
-		d.insertAdjacentHTML('beforeend', '<p style="color: red;">Error：未检索到内容（需完全匹配）</p>');
+		d.insertAdjacentHTML('beforeend', '<p style="color: red;">未知错误</p>');
 	}
 }
