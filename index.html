@@ -1,16 +1,509 @@
 <!DOCTYPE html>
-<html>
-  <head>
-  <meta charset="utf-8">
-  <title>正在跳转...</title>
-  </head>
-  <script>
-    const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
-     
-    if (isMobile) {
-      window.location.replace("https://gliuhe.github.io/Activities/m_index.html");
-    } else {
-      window.location.replace("https://gliuhe.github.io/Activities/find.html");
-    }
-</script>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>文件查询 - Liuhe</title>
+    <style>
+        /* 重置样式和基础设置 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', 'Microsoft YaHei', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+        /* 导航栏样式 */
+        .header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+
+        .nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .nav-brand h1 {
+            color: #667eea;
+            font-size: 1.8rem;
+            font-weight: 700;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-link {
+            text-decoration: none;
+            color: #666;
+            font-weight: 500;
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+        }
+
+        .nav-link:hover,
+        .nav-link.active {
+            background: #667eea;
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        /* 主内容区 */
+        .main {
+            margin-top: 70px;
+            padding: 2rem 1rem;
+            min-height: calc(100vh - 70px);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* 搜索区域 */
+        .search-section {
+            text-align: center;
+            color: white;
+            max-width: 600px;
+            width: 100%;
+        }
+
+        .search-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .search-subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            margin-bottom: 2rem;
+        }
+
+        .search-info {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 1rem;
+            border-radius: 10px;
+            margin-bottom: 2rem;
+            font-size: 0.9rem;
+            max-width: 500px;
+        }
+
+        .search-form {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            width: 100%;
+            max-width: 400px;
+        }
+
+        .search-input {
+            flex: 1;
+            padding: 1rem;
+            border: none;
+            border-radius: 25px;
+            font-size: 1rem;
+            outline: none;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .search-input:focus {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .search-button {
+            background: #f5b041;
+            color: white;
+            border: none;
+            border-radius: 25px;
+            padding: 1rem 2rem;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .search-button:hover {
+            background: #e67e22;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .example-text {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 0.9rem;
+            margin-top: 1rem;
+        }
+
+        /* 结果区域 */
+        .results-section {
+            max-width: 800px;
+            width: 100%;
+            margin-top: 2rem;
+        }
+
+        .search-status {
+            text-align: center;
+            color: white;
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+            font-weight: 500;
+        }
+
+        .result-item {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 1.5rem;
+            border-radius: 15px;
+            margin-bottom: 1rem;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            animation: fadeIn 0.5s ease-out;
+            transition: all 0.3s ease;
+        }
+
+        .result-item:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .result-title {
+            color: #2c3e50;
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .result-title::before {
+            content: "🔍";
+            font-size: 1.1rem;
+        }
+
+        .result-description {
+            color: #7f8c8d;
+            font-size: 1rem;
+            margin-bottom: 1rem;
+            line-height: 1.5;
+        }
+
+        .result-actions {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .action-button {
+            background: #3498db;
+            color: white;
+            border: none;
+            padding: 0.6rem 1.2rem;
+            border-radius: 25px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            text-decoration: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.3rem;
+        }
+
+        .action-button:hover {
+            background: #2980b9;
+            transform: translateY(-1px);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .action-button.download {
+            background: #2ecc71;
+        }
+
+        .action-button.download:hover {
+            background: #27ae60;
+        }
+
+        .action-button.view {
+            background: #f39c12;
+        }
+
+        .action-button.view:hover {
+            background: #e67e22;
+        }
+
+        .no-results {
+            text-align: center;
+            color: #e74c3c;
+            font-size: 1.1rem;
+            font-weight: 500;
+            padding: 2rem;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 15px;
+            margin-top: 1rem;
+        }
+
+        .search-meta {
+            color: #95a5a6;
+            font-size: 0.9rem;
+            margin-top: 0.5rem;
+            font-style: italic;
+        }
+
+        /* 动画 */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* 响应式设计 */
+        @media (max-width: 768px) {
+            .nav {
+                flex-direction: column;
+                height: auto;
+                padding: 1rem;
+            }
+            
+            .nav-menu {
+                margin-top: 1rem;
+                gap: 1rem;
+            }
+            
+            .search-title {
+                font-size: 2rem;
+            }
+            
+            .search-form {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            .search-input,
+            .search-button {
+                width: 100%;
+            }
+            
+            .main {
+                margin-top: 120px;
+                padding: 1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .search-title {
+                font-size: 1.8rem;
+            }
+            
+            .result-item {
+                padding: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- 导航栏 -->
+    <header class="header">
+        <nav class="nav">
+            <div class="nav-brand">
+                <h1>Liuhe</h1>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="https://gliuhe.github.io" class="nav-link">首页</a></li>
+                <li><a href="https://gliuhe.github.io/Activities" class="nav-link active">文件查询</a></li>
+                <li><a href="https://gliuhe.github.io/about" class="nav-link">关于</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- 主内容区 -->
+    <main class="main">
+        <section class="search-section">
+            <h1 class="search-title">文件查询</h1>
+            <p class="search-subtitle">请输入关键字来查找文件</p>
+            
+            <div class="search-form">
+                <input type="text" class="search-input" placeholder="输入关键字..." id="searchInput">
+                <button type="button" class="search-button" onclick="Find()">查找</button>
+            </div>
+            
+            <p class="example-text">输入（示例：AP5）</p>
+            
+            <div class="search-info">
+                <strong>支持的关键字：</strong><br>
+                • 评选文案 - 活动评选文案和文档下载<br>
+                • AP1-AP6 - 活动图片查看<br>
+                • Video2404 - 视频内容
+            </div>
+        </section>
+
+        <!-- 结果区域 -->
+        <section class="results-section" id="resultsContainer">
+            <!-- 搜索结果将动态显示在这里 -->
+        </section>
+    </main>
+
+    <script>
+        // 优化后的JavaScript代码 - 更像搜索界面
+        let searchCount = 0;
+        
+        // 文件映射配置 - 更详细的描述
+        const fileMap = {
+            "评选文案": {
+                title: "活动评选文案",
+                description: "春游照片评比活动的详细文案内容，包含活动介绍、评选标准等",
+                link: "https://gliuhe.github.io/Activities/WenAn.html",
+                download: "https://gliuhe.github.io/Activities/《春游照片评比》文案.docx",
+                type: "文档"
+            },
+            "AP1": { 
+                title: "活动图片 AP1",
+                description: "春游活动照片 - 第一张精选图片",
+                link: "https://gliuhe.github.io/Activities/AP-1.jpg",
+                type: "图片"
+            },
+            "AP2": { 
+                title: "活动图片 AP2",
+                description: "春游活动照片 - 第二张精选图片",
+                link: "https://gliuhe.github.io/Activities/AP-2.jpg",
+                type: "图片"
+            },
+            "AP3": { 
+                title: "活动图片 AP3",
+                description: "春游活动照片 - 第三张精选图片",
+                link: "https://gliuhe.github.io/Activities/AP-3.jpg",
+                type: "图片"
+            },
+            "AP4": { 
+                title: "活动图片 AP4",
+                description: "春游活动照片 - 第四张精选图片",
+                link: "https://gliuhe.github.io/Activities/AP-4.jpg",
+                type: "图片"
+            },
+            "AP5": { 
+                title: "活动图片 AP5",
+                description: "春游活动照片 - 第五张精选图片",
+                link: "https://gliuhe.github.io/Activities/AP-5.jpg",
+                type: "图片"
+            },
+            "AP6": { 
+                title: "活动图片 AP6",
+                description: "春游活动照片 - 第六张精选图片",
+                link: "https://gliuhe.github.io/Activities/AP-6.jpg",
+                type: "图片"
+            },
+            "Video2404": { 
+                title: "视频内容 Video2404",
+                description: "春游活动视频记录 - 2024年4月拍摄",
+                link: "https://gliuhe.github.io/Video2404",
+                type: "视频"
+            }
+        };
+
+        function Find() {
+            const searchInput = document.getElementById('searchInput');
+            const resultsContainer = document.getElementById('resultsContainer');
+            const keyword = searchInput.value.trim();
+            
+            searchCount++;
+            
+            // 清空之前的结果
+            resultsContainer.innerHTML = '';
+            
+            let resultHTML = '';
+            
+            if (keyword === "") {
+                resultHTML = `
+                    <div class="search-status">
+                        <p>🔍 请输入搜索关键字</p>
+                    </div>
+                    <div class="no-results">
+                        <p>搜索内容不能为空，请输入有效关键字</p>
+                    </div>
+                `;
+            } else if (fileMap[keyword]) {
+                const fileInfo = fileMap[keyword];
+                resultHTML = `
+                    <div class="search-status">
+                        <p>✅ 找到 1 个结果，关键字："${keyword}"</p>
+                    </div>
+                    <div class="result-item">
+                        <div class="result-title">${fileInfo.title}</div>
+                        <div class="result-description">${fileInfo.description}</div>
+                        <div class="result-actions">
+                            <a href="${fileInfo.link}" rel="noopener noreferrer" class="action-button view">
+                                📄 查看内容
+                            </a>
+                            ${fileInfo.download ? `
+                            <a href="${fileInfo.download}" rel="noopener noreferrer" class="action-button download">
+                                ⬇️ 下载文档
+                            </a>` : ''}
+                        </div>
+                        <div class="search-meta">文件类型：${fileInfo.type} | 搜索次数：${searchCount}</div>
+                    </div>
+                `;
+            } else {
+                resultHTML = `
+                    <div class="search-status">
+                        <p>❌ 未找到结果，关键字："${keyword}"</p>
+                    </div>
+                    <div class="no-results">
+                        <p>抱歉，没有找到与 "${keyword}" 相关的内容</p>
+                        <p style="margin-top: 1rem; font-size: 0.9rem;">请检查关键字拼写或尝试其他关键字</p>
+                    </div>
+                `;
+            }
+
+            // 插入结果
+            resultsContainer.innerHTML = resultHTML;
+            
+            // 清空输入框
+            searchInput.value = '';
+            
+            // 滚动到结果区域
+            resultsContainer.scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // 添加回车键支持
+        document.getElementById('searchInput').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                Find();
+            }
+        });
+
+        // 页面加载完成后自动聚焦搜索框
+        document.addEventListener('DOMContentLoaded', function() {
+            document.getElementById('searchInput').focus();
+        });
+    </script>
+</body>
 </html>
